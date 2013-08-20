@@ -1,0 +1,136 @@
+<!doctype html>
+<!-- The DOCTYPE declaration above will set the    -->
+<!-- browser's rendering engine into               -->
+<!-- "Standards Mode". Replacing this declaration  -->
+<!-- with a "Quirks Mode" doctype may lead to some -->
+<!-- differences in layout.                        -->
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <!--                                           -->
+    <!-- Any title is fine                         -->
+    <!--                                           -->
+    <title>Web Application Starter Project</title>
+    
+    <!--                                           -->
+    <!-- This script loads your compiled module.   -->
+    <!-- If you add any GWT meta tags, they must   -->
+    <!-- be added before this line.                -->
+    <!--                                           -->
+    <script type="text/javascript" language="javascript" src="myplan/myplan.nocache.js"></script>
+        <script type="text/javascript" language="javascript">
+        var mapConfig = {
+            // myplan.casil.ucdavis.edu
+            // token : "2sLgyYp7pAIK7-09HXGJUVNGvOA_Av_6yd7PtxRLuUsii28vhKCfF-RSi77yE940Oek_h4cSDhNe7rB2CSPHLg",
+            // myPlan-63986102.us-west-1.elb.amazonaws.com
+            // token: "40KeK02i4BqCfXzEjNLJUxMB4AkoKQ3GFrHty765QwqNwa5OB7VgX0redN67lzbEv4Av_wRGAUDC0boX_7jinbrOz5__pLWQQ6d2Q_mIntU.",
+            // 184.72.59.175
+            // token: "auyKdMvzUKVdqKNbYTvF30FOJ1noI2Pi67XP1qaUSsfkOVbrQq_DxMFM2xRd83X3",
+            token: "",
+            anchor: "GadgetPanel",
+        zoom : 7,
+        center : [-121.01, 38.22],
+        overlays:[
+         {  
+                 label: "Tribal Lands",
+                 url: "http://myplan.casil.ucdavis.edu/ArcGIS/rest/services/Planning_Cadastre/Tribal_Lands/MapServer",
+                 visible: false,
+                 transparency: 75
+         }
+        ],
+        basemaps: [
+        	{ 
+        		name: "Gray Basemap",
+        		url: "http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer",
+        		iconUrl: "http://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/export?bbox=-20037507.0671618%2C-19971868.8804086%2C20037507.0671618%2C19971868.8804086&bboxSR=&layers=&layerdefs=&size=100%2C+67&imageSR=&format=png&transparent=true&dpi=&time=&layerTimeOptions=&f=image"
+        	}
+        ],
+        datalayers: [
+        { label: "Population", 
+		  url: "/arcgis/rest/services/Society/PopulationDensity_2010/MapServer",
+		  legendUrl: "/arcgis/rest/services/Society/PopulationDensity_2010/MapServer/legend?f=json",
+                  visible: false,
+                  transparency : 80
+	 },
+                 {
+                label: "Air Space",   
+                url: "http://myplan.casil.ucdavis.edu/ArcGIS/rest/services/Intelligence_Military/SUA_in_WGA_states/MapServer",
+                legendUrl: "http://myplan.casil.ucdavis.edu/ArcGIS/rest/services/Intelligence_Military/SUA_in_WGA_states/MapServer/legend?f=json",
+                visible: true,
+                transparency : 80
+         },
+          {  label: "Fire", url: "http://myplan.casil.ucdavis.edu/arcgis/rest/services/GeoScience/Fire_Severity_Zone/MapServer",
+                        legendUrl: "http://myplan.casil.ucdavis.edu/arcgis/rest/services/GeoScience/Fire_Severity_Zone/MapServer/legend?f=json",
+                 visible: false,
+                 transparency: 50
+         },
+         { label: "Flood", url: "http://myplan.casil.ucdavis.edu/arcgis/rest/services/GeoScience/Flood_Risk/MapServer",
+                          legendUrl: "http://myplan.casil.ucdavis.edu/ArcGIS/rest/services/GeoScience/Flood_Risk/MapServer/legend?f=json",
+                  visible: false,
+                  transparency : 50
+         },
+            { label: "Liquefaction", url: "http://myplan.casil.ucdavis.edu/arcgis/rest/services/GeoScience/Liquefaction/MapServer",
+                  legendUrl: "http://myplan.casil.ucdavis.edu/ArcGIS/rest/services/GeoScience/Liquefaction/MapServer/legend?f=json",
+                  visible: true,
+                  transparency : 80
+         },
+         { label: "Fault Zones", url: "http://myplan.casil.ucdavis.edu/arcgis/rest/services/GeoScience/Fault_Lines/MapServer",
+                          legendUrl: "http://myplan.casil.ucdavis.edu/ArcGIS/rest/services/GeoScience/Fault_Lines/MapServer/legend?f=json",
+                  visible: true,
+                  transparency : 100
+         },
+         { label: "Shaking Zones", url: "http://myplan.casil.ucdavis.edu/arcgis/rest/services/GeoScience/Shaking_1sec/MapServer",
+                          legendUrl: "http://myplan.casil.ucdavis.edu/arcgis/rest/services/GeoScience/Shaking_1sec/MapServer/legend?f=json",
+                  visible: false,
+                  transparency : 90
+         },
+         { label: "Tsunami Risk", url: "http://myplan.casil.ucdavis.edu/arcgis/rest/services/GeoScience/Tsunami_Risk/MapServer",
+                  legendUrl: "http://myplan.casil.ucdavis.edu/ArcGIS/rest/services/GeoScience/Tsunami_Risk/MapServer/legend?f=json",
+                  visible: true,
+                  transparency : 80
+         },
+         { label: "Land Use", url: "http://myplan.casil.ucdavis.edu/ArcGIS/rest/services/Environment/CAIN/MapServer",
+                  legendUrl: "http://myplan.casil.ucdavis.edu/ArcGIS/rest/services/Environment/CAIN/MapServer/legend?f=json",
+                 visible: false,
+                 transparency: 90
+         }
+        ],
+        exportImageUrl: "http://export.myplan.casil.ucdavis.edu/cgi-bin/generateImage64.py",
+        provider: {
+         icon: "",
+         popup: "This hazard tool provided by the California Resources Agency",
+         url: "http://myplan.casil.ucdavis.edu"
+        },
+        geocoder: "google",
+        geocoderBias: "california",
+        //gMapsKey: "ABQIAAAAKMh-MLKs8k9ehw0smA47PhQ8Nrx2RztSZLgv0z5hansZk8WiFxRbKjtQ4LaDOGRY_kIayI2VEPpBtA",
+       gMapsKey:"ABQIAAAAKMh-MLKs8k9ehw0smA47PhS-E7vKUp85R137eYcPd0BB_ZnybhSU7j5oox5zlMorKhBn1NK3-xNreQ",
+        title: "MyPlan"
+    }
+     </script>
+    
+  </head>
+
+  <!--                                           -->
+  <!-- The body can have arbitrary html, or      -->
+  <!-- you can leave the body empty if you want  -->
+  <!-- to create a completely dynamic UI.        -->
+  <!--                                           -->
+  <body class="tundra">
+
+    <!-- OPTIONAL: include this if you want history support -->
+    <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
+    
+    <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+    <noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+
+	<div id="GadgetPanel" class="GadgetPanel"></div>
+  </body>
+</html>

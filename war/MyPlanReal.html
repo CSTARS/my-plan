@@ -1,0 +1,139 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=100"> <!-- IE8 mode -->
+
+    <title>My Plan</title>
+    	<script type="text/javascript" language="javascript" src="myplan/myplan.nocache.js"></script>
+    	<script type="text/javascript" language="javascript">
+    var splash = "<h2>This is my Splash screen</h2>"+
+		"see custom?";
+    	
+        var svr="http://myplan.casil.ucdavis.edu/arcgis/rest/services";	
+	var mapConfig = {
+        "title": "MyPlan",
+		"anchor": "GadgetPanel",
+        "zoom" : 7,
+        "center" : [-121.01, 38.22],
+
+        "basemaps": [
+
+        ],
+        datalayers: [
+	 { label: "Population", 
+	   url: svr.concat("/Society/PopulationDensity_2010/MapServer"),
+	   legendUrl: svr.concat("/Society/PopulationDensity_2010/MapServer/legend?f=json"),
+                  visible: false,
+                  transparency : 80,
+		  legendIsGradient: true
+		   },
+		    { label: "Boundaries", 
+		      url: svr.concat("/Boundaries/US_cities_counties/MapServer"),
+		        legendUrl: svr.concat("/Boundaries/US_cities_counties/MapServer/legend?f=json"),
+                  visible: false,
+                  transparency : 80
+		   },
+         { label: "Flood/FEMA", 
+	   url: svr.concat("/GeoScience/Flood_Risk_FEMA/MapServer"),
+	     legendUrl: svr.concat("/GeoScience/Flood_Risk_FEMA/MapServer/legend?f=json"),
+                  visible: false,
+                  transparency : 80
+         },
+         { label: "Flood/CA specific", 
+	   url: svr.concat("/GeoScience/Flood_Risk_State/MapServer"),
+	     legendUrl: svr.concat("/GeoScience/Flood_Risk_State/MapServer/legend?f=json"),
+                  visible: false,
+                  transparency : 80
+         },
+	  { label: "Fire Severity Zone",
+	    url: svr.concat("/GeoScience/Fire_Severity_Zone/MapServer"),
+	      legendUrl: svr.concat("/GeoScience/Fire_Severity_Zone/MapServer/legend?f=json"),
+                  visible: false,
+                  transparency: 80
+         },
+	  { label: "Liquefaction", 
+	  url: svr.concat("/GeoScience/Liquefaction/MapServer"),
+	  legendUrl: svr.concat("/GeoScience/Liquefaction/MapServer/legend?f=json"),
+                visible: false,
+                transparency : 80
+         },
+         {  label: "Landslides", 
+	 url: svr.concat("/GeoScience/Potential_Landslides/MapServer"),
+	 legendUrl: svr.concat("/GeoScience/Potential_Landslides/MapServer/legend?f=json"),
+                visible: false,
+                transparency : 80
+         },
+         {label: "Fault Lines", 
+	 url: svr.concat("/GeoScience/Fault_Lines/MapServer"),
+	 legendUrl: svr.concat("/GeoScience/Fault_Lines/MapServer/legend?f=json"),
+                visible: true,
+                transparency : 80
+         },
+         {label: "Shaking/1 sec", 
+	 url: svr.concat("/GeoScience/Shaking_1sec/MapServer"),
+	 legendUrl: svr.concat("/GeoScience/Shaking_1sec/MapServer/legend?f=json"),
+                visible: false,
+                transparency : 90,
+		legendIsGradient: true,
+         },
+         {label: "Shaking/0.2 sec", 
+	 url: svr.concat("/GeoScience/Shaking_02sec/MapServer"),
+	 legendUrl: svr.concat("/GeoScience/Shaking_02sec/MapServer/legend?f=json"),
+                visible: false,
+                transparency : 90,
+		legendIsGradient: true
+         },
+         {  label: "Tsunami Risk", 
+	 url: svr.concat("/GeoScience/Tsunami/MapServer"),
+	 legendUrl: svr.concat("/GeoScience/Tsunami/MapServer/legend?f=json"),
+                visible: false,
+                transparency : 80
+         },
+         {  label: "Land Cover",
+	 url: svr.concat("/Environment/CAML/MapServer"),
+	 legendUrl: svr.concat("/Environment/CAML/MapServer/legend?f=json"),
+                visible: false,
+                transparency: 30
+         }
+        ],
+	exportImageUrl:"http://export.myplan.casil.ucdavis.edu/cgi-bin/generateImage.py",
+        provider: {
+         icon: "",
+         popup: "This <b>DRAFT</b> <b>myPlan</b> application is a collaborative effort between <a href='http://www.calema.ca.gov'>CalEMA</a>, California's Natural Resources Agency's <a href='http://www.ceres.ca.gov'>CERES</a> program, FEMA, and ERSI",
+         url: ""
+        },
+	"exportImageUrl":"http://export.myplan.casil.ucdavis.edu/cgi-bin/generateImage64.py",
+        "provider": {
+         "icon": "",
+         "popup": "This <b>DRAFT</b> <b>myPlan</b> application is a collaborative effort between <a href='http://www.calema.ca.gov'>CalEMA</a>, California's Natural Resources Agency's <a href='http://www.ceres.ca.gov'>CERES</a> program, FEMA, and ERSI",
+         "url": ""
+        },
+	"geocoder": "google",
+	"geocoderBias": "california",
+
+	"gMapsKey": "ABQIAAAAKMh-MLKs8k9ehw0smA47PhQGxk - - u4KJ3I_foEJDQZsTIhUbaRQwTenqe600ViL-35oETyULPIMaeA",
+	
+	"customSplashHtml": splash
+    
+    }
+	</script>
+
+  </head>
+
+  <body class="tundra">
+
+    <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
+    <noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+
+
+	<div id="GadgetPanel" class="GadgetPanel"></div>
+
+ 
+  </body>
+
+</html>

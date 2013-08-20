@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='myplan'>
+  <!-- Inherit the core Web Toolkit stuff.                        -->
+  <inherits name='com.google.gwt.user.User'/>
+  <inherits name='edu.ucdavis.gwt.gis.GwtGis' />
+  <inherits name='com.google.gwt.maps.GoogleMaps' />
+ <!-- 
+ <add-linker name="xs" />
+ -->
+   
+  <!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
+
+  <!-- Other module inherits                                      -->
+
+  <!-- Specify the app entry point class.                         -->
+  <entry-point class='gov.ca.ceres.myplan.client.MyPlan'/>
+
+  <!-- Specify the paths for translatable code                    -->
+  <source path='client'/>
+  
+  <!-- <script src="http://maps.google.com/maps?gwt=1&amp;file=api&amp;v=2&amp;key=ABQIAAAAKMh-MLKs8k9ehw0smA47PhSfi-cszbb5Fw0pCAZPIjh7qnX_NhSEkbKwETXHtBceB_uCiDBgg-VUyg" ></script>
+  <script src="https://www.google.com/jsapi?key=ABQIAAAAKMh-MLKs8k9ehw0smA47PhSfi-cszbb5Fw0pCAZPIjh7qnX_NhSEkbKwETXHtBceB_uCiDBgg-VUyg" ></script> -->
+
+</module>
